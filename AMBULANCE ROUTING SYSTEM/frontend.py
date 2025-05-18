@@ -11,8 +11,7 @@ class AmbulanceRoutingApp:
         self.root.geometry("1100x750")
         self.root.configure(bg="#9bb8e4")
 
-        tk.Label(root, text="Ambulance Routing System - RapidRoute",
-                 font=("Helvetica", 20, "bold"), bg="#f0f2f5", fg="#1a237e").pack(pady=10)
+        tk.Label(root, text="Ambulance Routing System - RapidRoute",font=("Helvetica", 20, "bold"), bg="#f0f2f5", fg="#1a237e").pack(pady=10)
         self.canvas = tk.Canvas(root, width=700, height=500, bg="white", bd=2, relief=tk.SOLID)
 
        # self.canvas = tk.Canvas(root, width=1000, height=550, bg="white", bd=2, relief=tk.SOLID)
@@ -20,8 +19,21 @@ class AmbulanceRoutingApp:
 
         self.start_var = tk.StringVar()
         self.end_var = tk.StringVar()
-        location_names = [n for n in nodes if nodes[n]['type'] == 'location']
-        hospital_names = [n for n in nodes if nodes[n]['type'] == 'hospital']
+
+        # location_names = [n for n in nodes if nodes[n]['type'] == 'location']
+        #  hospital_names = [n for n in nodes if nodes[n]['type'] == 'hospital']
+
+
+        location_names = []
+        for n in nodes:
+            if nodes[n]['type'] == 'location':
+                location_names.append(n)
+
+        hospital_names = []
+        for n in nodes:
+            if nodes[n]['type'] == 'hospital':
+                    hospital_names.append(n)
+
 
         frame = tk.Frame(root, bg="#f0f2f5")
         frame.pack(pady=10)
@@ -42,8 +54,7 @@ class AmbulanceRoutingApp:
         self.result_label.pack(pady=5)
 
         # Footer
-        self.footer = tk.Label(root, text="Made by Team PathPulse | Team ID: DAA-IV-T159",
-                               font=("Arial", 10), bg="#f0f2f5", fg="gray")
+        self.footer = tk.Label(root, text="Made by Team PathPulse | Team ID: DAA-IV-T159",font=("Arial", 10), bg="#f0f2f5", fg="gray")
         self.footer.pack(side=tk.BOTTOM, pady=5)
 
         self.draw_graph()
