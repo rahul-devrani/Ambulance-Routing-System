@@ -51,9 +51,9 @@ nodes = {
 
 
 edges = {
-    "ISBT": {"GMS Road": 3, "Clock Tower": 7},
-    "Clock Tower": {"ISBT": 7, "Rajpur Road": 0.2, "Paltan Bazaar": 1.7, "EC Road": 1.6},
-    "Paltan Bazaar": {"Clock Tower": 2, "Ballupur": 3, "Race Course": 2},
+    "ISBT": {"GMS Road": 3, "Clock Tower": 7, "City Hospital": 3, "Majra": 3,"Ashirwad Hospital": 5},
+    "Clock Tower": {"ISBT": 7, "Rajpur Road": 0.2, "Paltan Bazaar": 1.7, "EC Road": 1.6, "Haridwar Road": 2},
+    "Paltan Bazaar": {"Clock Tower": 2, "Ballupur": 3, "Race Course": 2, "Laxman Chowk": 2},
     "Rajpur Road": {"Clock Tower": 4, "Jakhan": 3, "Indira Nagar": 4},
     "Ballupur": {"Paltan Bazaar": 3, "Kaulagarh": 3, "Prem Nagar": 5, "Ajabpur": 3},
     "Prem Nagar": {"Ballupur": 5, "CHC Premnagar": 3, "Clement Town": 2},
@@ -61,7 +61,7 @@ edges = {
     "GMS Road": {"ISBT": 3, "Saharanpur Chowk": 2, "Patel Nagar": 3},
     "Saharanpur Chowk": {"GMS Road": 2, "Velmed Hospital": 3},
     "Race Course": {"Paltan Bazaar": 2, "Doon Hospital": 3, "Nehru Colony": 3},
-    "Araghar": {"Kaulagarh": 4, "Dalanwala": 3},
+    "Araghar": {"Kaulagarh": 4, "Dalanwala": 3,"Ashirwad Hospital": 5},
     "Nehru Colony": {"Race Course": 3, "Shri Mahant Hospital": 2, "Suddh Anand Hospital": 3, "Combined Medical Institute": 2},
     "Kargi Chowk": {"Nehru Colony": 3, "City Hospital": 2},
     "Jakhan": {"Rajpur Road": 3, "Max Hospital": 2},
@@ -75,16 +75,16 @@ edges = {
     "Ashirwad Hospital": {"Raipur": 4},
     "Government Hospital Raipur": {"Raipur": 2},
     "Subhash Nagar": {"Majra": 2},
-    "Majra": {"ISBT": 3},
-    "Mothrowala": {"Ajabpur": 2},
+    "Majra": {"ISBT": 3, "Subhash Nagar": 2, "Mothrowala": 3},
+    "Mothrowala": {"Ajabpur": 2,"City Hospital": 3},
     "Patel Nagar": {"GMS Road": 3},
     "Selaqui": {"Prem Nagar": 7},
-    "Brahmanwala": {"Ballupur": 3},
+    "Brahmanwala": {"Ballupur": 3,"City Hospital": 2},
     "Laxman Chowk": {"Paltan Bazaar": 2},
-    "Haridwar Road": {"Clock Tower": 2},
+    "Haridwar Road": {"Clock Tower": 2, "City Hospital": 3},
     "Chakrata Road": {"Ballupur": 2},
-    "Seema Dental": {"Nehru Colony": 2},
-    "Bhaniyawala": {"Raipur": 5},
+    "Seema Dental": {"Nehru Colony": 2, "City Hospital": 2},
+    "Bhaniyawala": {"Raipur": 5, "City Hospital": 3},
 }
 
 def dijkstra(start, end):
@@ -102,3 +102,7 @@ def dijkstra(start, end):
             if neighbor not in visited:
                 heapq.heappush(queue, (cost + weight, neighbor, path))
     return (float("inf"), [])
+
+
+
+
