@@ -7,13 +7,13 @@ from backend import nodes, dijkstra
 class AmbulanceRoutingApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("🚑 Ambulance Routing System - PathPulse")
+        self.root.title("🚑 Ambulance Routing System - RapidRoute")
         self.root.geometry("1100x750")
-        self.root.configure(bg="#f0f2f5")
+        self.root.configure(bg="#9bb8e4")
 
-        tk.Label(root, text="Ambulance Routing System - PathPulse",
+        tk.Label(root, text="Ambulance Routing System - RapidRoute",
                  font=("Helvetica", 20, "bold"), bg="#f0f2f5", fg="#1a237e").pack(pady=10)
-        self.canvas = tk.Canvas(root, width=650, height=500, bg="white", bd=2, relief=tk.SOLID)
+        self.canvas = tk.Canvas(root, width=700, height=500, bg="white", bd=2, relief=tk.SOLID)
 
        # self.canvas = tk.Canvas(root, width=1000, height=550, bg="white", bd=2, relief=tk.SOLID)
         self.canvas.pack(pady=10)
@@ -86,7 +86,7 @@ class AmbulanceRoutingApp:
             self.canvas.create_line(x1, y1, x2, y2, fill="green", width=3)
 
         self.result_label.config(
-            text=f"✔ Shortest path: {' ➝ '.join(path)}\n📏 Total Distance: {distance} km", fg="#2e7d32"
+            text=f"Shortest path: {' ➝ '.join(path)}\n\n Total Distance: {distance} km", fg="#2e7d32"
         )
 
 if __name__ == "__main__":
