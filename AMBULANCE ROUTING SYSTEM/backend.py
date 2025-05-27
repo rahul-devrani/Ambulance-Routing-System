@@ -1,53 +1,54 @@
 import heapq
 nodes = {
     # Locations
-    "ISBT": {"coords": (50, 50), "type": "location"},
-    "Clock Tower": {"coords": (200, 50), "type": "location"},
-    "Paltan Bazaar": {"coords": (280, 100), "type": "location"},
-    "Rajpur Road": {"coords": (350, 30), "type": "location"},
-    "Ballupur": {"coords": (180, 160), "type": "location"},
-    "Prem Nagar": {"coords": (50, 220), "type": "location"},
-    "Kaulagarh": {"coords": (400, 180), "type": "location"},
-    "GMS Road": {"coords": (130, 110), "type": "location"},
-    "Saharanpur Chowk": {"coords": (130, 30), "type": "location"},
-    "Race Course": {"coords": (260, 220), "type": "location"},
-    "Clement Town": {"coords": (30, 180), "type": "location"},
-    "Araghar": {"coords": (420, 100), "type": "location"},
-    "Subhash Nagar": {"coords": (30, 130), "type": "location"},
-    "Nehru Colony": {"coords": (260, 280), "type": "location"},
-    "Kargi Chowk": {"coords": (100, 280), "type": "location"},
-    "Jakhan": {"coords": (470, 50), "type": "location"},
-    "Raipur": {"coords": (550, 180), "type": "location"},
-    "Vasant Vihar": {"coords": (300, 140), "type": "location"},
-    "Ajabpur": {"coords": (120, 160), "type": "location"},
-    "Dalanwala": {"coords": (400, 240), "type": "location"},
-    "EC Road": {"coords": (260, 80), "type": "location"},
-    "Indira Nagar": {"coords": (500, 140), "type": "location"},
-    "Mothrowala": {"coords": (70, 160), "type": "location"},
-    "Patel Nagar": {"coords": (160, 90), "type": "location"},
-    "Majra": {"coords": (90, 90), "type": "location"},
-    "Selaqui": {"coords": (30, 300), "type": "location"},
-    "Brahmanwala": {"coords": (200, 200), "type": "location"},
-    "Laxman Chowk": {"coords": (230, 140), "type": "location"},
-    "Haridwar Road": {"coords": (260, 40), "type": "location"},
-    "Chakrata Road": {"coords": (190, 130), "type": "location"},
-    "Seema Dental": {"coords": (150, 250), "type": "location"},
-    "Bhaniyawala": {"coords": (600, 220), "type": "location"},
+    "ISBT": {"coords": (80, 100), "type": "location"},
+    "Clock Tower": {"coords": (270, 100), "type": "location"},
+    "Paltan Bazaar": {"coords": (320, 140), "type": "location"},
+    "Rajpur Road": {"coords": (410, 80), "type": "location"},
+    "Ballupur": {"coords": (240, 220), "type": "location"},
+    "Prem Nagar": {"coords": (100, 300), "type": "location"},
+    "Kaulagarh": {"coords": (420, 220), "type": "location"},
+    "GMS Road": {"coords": (150, 160), "type": "location"},
+    "Saharanpur Chowk": {"coords": (170, 80), "type": "location"},
+    "Race Course": {"coords": (330, 280), "type": "location"},
+    "Clement Town": {"coords": (70, 260), "type": "location"},
+    "Araghar": {"coords": (460, 160), "type": "location"},
+    "Subhash Nagar": {"coords": (70, 190), "type": "location"},
+    "Nehru Colony": {"coords": (320, 340), "type": "location"},
+    "Kargi Chowk": {"coords": (180, 340), "type": "location"},
+    "Jakhan": {"coords": (500, 100), "type": "location"},
+    "Raipur": {"coords": (570, 220), "type": "location"},
+    "Vasant Vihar": {"coords": (350, 200), "type": "location"},
+    "Ajabpur": {"coords": (160, 230), "type": "location"},
+    "Dalanwala": {"coords": (440, 280), "type": "location"},
+    "EC Road": {"coords": (300, 120), "type": "location"},
+    "Indira Nagar": {"coords": (520, 180), "type": "location"},
+    "Mothrowala": {"coords": (100, 230), "type": "location"},
+    "Patel Nagar": {"coords": (200, 140), "type": "location"},
+    "Majra": {"coords": (120, 140), "type": "location"},
+    "Selaqui": {"coords": (60, 360), "type": "location"},
+    "Brahmanwala": {"coords": (240, 260), "type": "location"},
+    "Laxman Chowk": {"coords": (290, 200), "type": "location"},
+    "Haridwar Road": {"coords": (300, 80), "type": "location"},
+    "Chakrata Road": {"coords": (250, 180), "type": "location"},
+    "Seema Dental": {"coords": (230, 320), "type": "location"},
+    "Bhaniyawala": {"coords": (610, 280), "type": "location"},
 
     # Hospitals
-    "Max Hospital": {"coords": (600, 50), "type": "hospital"},
-    "Doon Hospital": {"coords": (370, 300), "type": "hospital"},
-    "Synergy Hospital": {"coords": (470, 270), "type": "hospital"},
-    "Shri Mahant Hospital": {"coords": (300, 320), "type": "hospital"},
-    "CHC Premnagar": {"coords": (30, 260), "type": "hospital"},
-    "Velmed Hospital": {"coords": (180, 20), "type": "hospital"},
-    "City Hospital": {"coords": (130, 320), "type": "hospital"},
-    "Suddh Anand Hospital": {"coords": (250, 340), "type": "hospital"},
-    "AIIMS Rishikesh": {"coords": (20, 360), "type": "hospital"},
-    "Combined Medical Institute": {"coords": (200, 360), "type": "hospital"},
-    "Ashirwad Hospital": {"coords": (500, 300), "type": "hospital"},
-    "Government Hospital Raipur": {"coords": (550, 240), "type": "hospital"},
+    "Max Hospital": {"coords": (610, 100), "type": "hospital"},
+    "Doon Hospital": {"coords": (370, 360), "type": "hospital"},
+    "Synergy Hospital": {"coords": (490, 320), "type": "hospital"},
+    "Shri Mahant Hospital": {"coords": (330, 380), "type": "hospital"},
+    "CHC Premnagar": {"coords": (70, 330), "type": "hospital"},
+    "Velmed Hospital": {"coords": (200, 60), "type": "hospital"},
+    "City Hospital": {"coords": (180, 380), "type": "hospital"},
+    "Suddh Anand Hospital": {"coords": (280, 400), "type": "hospital"},
+    "AIIMS Rishikesh": {"coords": (40, 420), "type": "hospital"},
+    "Combined Medical Institute": {"coords": (240, 420), "type": "hospital"},
+    "Ashirwad Hospital": {"coords": (520, 340), "type": "hospital"},
+    "Government Hospital Raipur": {"coords": (580, 260), "type": "hospital"},
 }
+
 
 
 edges = {
@@ -88,20 +89,32 @@ edges = {
 }
 
 def dijkstra(start, end):
-    queue = [(0, start, [])]
-    visited = set()
+    import heapq
+    distances = {node: float('inf') for node in nodes}
+    previous = {node: None for node in nodes}
+    distances[start] = 0
+    queue = [(0, start)]
+
     while queue:
-        (cost, node, path) = heapq.heappop(queue)
-        if node in visited:
-            continue
-        visited.add(node)
-        path = path + [node]
-        if node == end:
-            return (cost, path)
-        for neighbor, weight in edges.get(node, {}).items():
-            if neighbor not in visited:
-                heapq.heappush(queue, (cost + weight, neighbor, path))
-    return (float("inf"), [])
+        current_dist, current_node = heapq.heappop(queue)
+
+        if current_node == end:
+            break
+
+        for neighbor, weight in edges.get(current_node, {}).items():
+            distance = current_dist + weight
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                previous[neighbor] = current_node
+                heapq.heappush(queue, (distance, neighbor))
+
+    path = []
+    curr = end
+    while curr:
+        path.insert(0, curr)
+        curr = previous[curr]
+
+    return distances[end], path
 
 def find_nearest_hospital(start):
     import heapq
@@ -133,5 +146,3 @@ def find_nearest_hospital(start):
                 heapq.heappush(queue, (distance, neighbor))
 
     return None, float('inf'), []
-
-
