@@ -99,7 +99,25 @@ class AmbulanceRoutingApp:
         self.result_label.config(
             text=f"Shortest path: {' ➝ '.join(path)}\n\n Total Distance: {distance} km", fg="#2e7d32"
         )
+    def find_nearest(self):
+        start = self.start_var.get()
+        if not start:
+            messagebox.showerror("Input Error", "Please select a start location.")
+            return
 
+        hospital, distance, path = backend.find_nearest_hospital(start)
+        if hospital is None:
+            messagebox.showinfo("No Hospital Found", "No hospital found reachable from this location.")
+            return
+
+        self.draw_graph()
+        self.highlight_path(path)
+
+        self.result_label.config(
+            text=f"Nearest hospital from {start} is {hospital}\n"
+                 f"\nPath: {' ➝ '.join(path)}\n\nTotal Distance: {distance} km",
+            fg="#2e7d32"
+        )
 if __name__ == "__main__":
     root = tk.Tk()
     app = AmbulanceRoutingApp(root)
