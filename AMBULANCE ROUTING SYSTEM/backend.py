@@ -103,6 +103,35 @@ def dijkstra(start, end):
                 heapq.heappush(queue, (cost + weight, neighbor, path))
     return (float("inf"), [])
 
+def find_nearest_hospital(start):
+    import heapq
+    distances = {node: float('inf') for node in nodes}
+    previous = {node: None for node in nodes}
+    distances[start] = 0
+    queue = [(0, start)]
 
+    visited = set()
+    while queue:
+        current_dist, current_node = heapq.heappop(queue)
+        visited.add(current_node)
+
+        if nodes[current_node]['type'] == 'hospital':
+            path = []
+            curr = current_node
+            while curr:
+                path.insert(0, curr)
+                curr = previous[curr]
+            return current_node, distances[current_node], path
+
+        for neighbor, weight in edges.get(current_node, {}).items():
+            if neighbor in visited:
+                continue
+            distance = current_dist + weight
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                previous[neighbor] = current_node
+                heapq.heappush(queue, (distance, neighbor))
+
+    return None, float('inf'), []
 
 
